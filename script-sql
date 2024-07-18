@@ -1,0 +1,108 @@
+create table PacViagem (
+  CodPacote int PRIMARY key,
+  valor money,
+  duracao int
+)
+
+CREATE TABLE PacGuia (
+  CodRelacao int PRIMARY KEY,
+  CodPacote int,
+  CodGuia int
+) 
+
+CREATE table PacPontoTuristico (
+  CodRelacao int PRIMARY KEY,
+  CodPacote int,
+  CodPontoTuristico int
+)
+
+create TABLE PacHoteis (
+  CodRelacao int PRIMARY KEY,
+  CodPacote int,
+  CodHoteis INT
+)
+  
+  CREATE table PacCidades (
+    CodRelacao int PRIMARY key,
+    CodPacote int,
+    CodCidade INT
+ )
+ 
+ CREATE table GuiasTuristicos (
+   CodGuia int PRIMARY key,
+   nome VARCHAR(20),
+   idade int,
+   CodCidade int
+ )
+ 
+ CREATE TABLE GuiaEspecialidades (
+   CodRelacao int PRIMARY KEY,
+   CodGuia int,
+   CodEspec int
+ )
+ 
+ CREATE TABLE cidades (
+   CodCidade int PRIMARY key,
+   cidade varchar(50),
+   estado varchar(100),
+   pais varchar(50),
+   populacao int,
+   CodClima int
+ )
+ 
+ CREATE TABLE GuiasEnderecos (
+   CodRelacao int PRIMARY KEY,
+   CodGuia int,
+   CodEndereco INT
+ )
+ 
+ CREATE TABLE Especialidade (
+   CodEspec int PRIMARY KEY,
+   tipo varchar(30)
+ )
+ 
+ CREATE TABLE Enderecos (
+   CodEnderecos int PRIMARY KEY,
+   cep varchar(9),
+   logradouro varchar(100)
+ )
+ 
+ CREATE TABLE PontoTuristico (
+   CodPontoTuristico int PRIMARY key,
+   nome varchar(100),
+   cep varchar(9),
+   logradouro varchar(100),
+   StatusPagamento bool,
+   HorarioInicio time,
+   HorarioTermino time,
+   CodCidade int
+ )
+ 
+ CREATE TABLE Hoteis (
+   CodHoteis int PRIMARY KEY,
+   Nome varchar(50),
+   Cep varchar(9),
+   logradouro varchar(100),
+   estrelas int,
+   NumeroQuartos int,
+   CodCidade INT
+ )
+ 
+ CREATE TABLE Restaurantes (
+   CodRestaurante int PRIMARY KEY,
+   nome varchar(50),
+   cep varchar(9),
+   logradouro varchar(100),
+   estrelas int,
+   TipoComida varchar(50),
+   CodCidade INT
+ )
+ 
+ CREATE TABLE Localidades (
+   CodLocalidade int PRIMARY KEY,
+   cep varchar(9),
+   cidade varchar(50),
+   estado varchar(100),
+   pais varchar(50)
+ )
+   
