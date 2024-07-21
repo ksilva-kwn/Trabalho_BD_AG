@@ -141,17 +141,17 @@ INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (3, 3);
 INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (4, 4);
 INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (5, 5);
 
-INSERT INTO GuiasTuristicos (nome, idade, CodCidadeCidades) VALUES ("Ana", 22, 1);
-INSERT INTO GuiasTuristicos (nome, idade, CodCidadeCidades) VALUES ("João", 25, 1);
-INSERT INTO GuiasTuristicos (nome, idade, CodCidadeCidades) VALUES ("Bruno", 29, 2);
-INSERT INTO GuiasTuristicos (nome, idade, CodCidadeCidades) VALUES ("Guilherme", 20, 3);
-INSERT INTO GuiasTuristicos (nome, idade, CodCidadeCidades) VALUES ("Juliana", 30, 2);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("Ana", 22, 1);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("João", 25, 1);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("Bruno", 29, 2);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("Guilherme", 20, 3);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("Juliana", 30, 2);
 
 INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (1,1);
 INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (2,2);
-INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (3,3);
-INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (4,4);
-INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (5,5);
+INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (3,2);
+INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (4,1);
+INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (5,1);
 
 INSERT INTO cidade (cidade, estado, pais, populacao, CodClima ) VALUES ("Passos", "MG", "Brasil", 120000, 1);
 INSERT INTO cidade (cidade, estado, pais, populacao, CodClima ) VALUES ("itau", "MG", "Brasil", 10000, 1);
@@ -200,3 +200,26 @@ INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-002', 'Itau',
 INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-003', 'Pratapolis', 'MG', 'Brasil');
 INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-004', 'Cassia', 'MG', 'Brasil');
 INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-005', 'Itamogi', 'MG', 'Brasil');
+
+/*UPDATE DE DADOS*/
+
+UPDATE PacViagem SET valor = 4500
+WHERE CodPacote = 5;
+
+UPDATE GuiasTuristicos SET idade = 32
+WHERE nome = 'Juliana';
+
+UPDATE Hoteis SET estrelas = 5
+WHERE Nome = 'Pousada da Serra';
+
+/*DELETANDO DADOS*/
+
+DELETE FROM GuiasTuristicos
+WHERE nome = 'João';
+
+DELETE FROM PontoTuristico
+WHERE nome = 'Teatro Municipal';
+
+DELETE FROM Especialidade
+WHERE tipo = 'monumentos históricos';
+
