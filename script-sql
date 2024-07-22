@@ -6,44 +6,44 @@ CREATE TABLE PacViagem (
   CodPacote INT AUTO_INCREMENT PRIMARY key,
   valor MONEY,
   duracao INT
-)
+);
 
 CREATE TABLE PacGuia (
   CodRelacao INT AUTO_INCREMENT PRIMARY KEY,
   CodPacote INT,
   CodGuia INT
-) 
+);
 
 CREATE TABLE PacPontoTuristico (
   CodRelacao INT AUTO_INCREMENT PRIMARY KEY,
   CodPacote INT,
   CodPontoTuristico INT
-)
+);
 
 CREATE TABLE PacHoteis (
   CodRelacao INT AUTO_INCREMENT PRIMARY KEY,
   CodPacote INT,
   CodHoteis INT
-)
+);
   
 CREATE TABLE PacCidades (
     CodRelacao INT AUTO_INCREMENT PRIMARY key,
     CodPacote INT,
     CodCidade INT
- )
+ );
  
 CREATE TABLE GuiasTuristicos (
    CodGuia INT AUTO_INCREMENT PRIMARY key,
    nome VARCHAR(20),
    idade INT,
    CodCidade INT
- )
+ );
  
 CREATE TABLE GuiaEspecialidades (
    CodRelacao INT AUTO_INCREMENT PRIMARY KEY,
    CodGuia INT,
    CodEspec INT
- )
+ );
  
 CREATE TABLE cidades (
    CodCidade INT AUTO_INCREMENT PRIMARY key,
@@ -52,24 +52,24 @@ CREATE TABLE cidades (
    pais VARCHAR(50),
    populacao INT,
    CodClima INT
- )
+ );
  
 CREATE TABLE GuiasEnderecos (
    CodRelacao INT AUTO_INCREMENT PRIMARY KEY,
    CodGuia INT,
    CodEndereco INT
- )
+ );
  
 CREATE TABLE Especialidade (
    CodEspec INT AUTO_INCREMENT PRIMARY KEY,
    tipo VARCHAR(30)
- )
+ );
  
 CREATE TABLE Enderecos (
    CodEnderecos INT AUTO_INCREMENT PRIMARY KEY,
    cep VARCHAR(9),
    logradouro VARCHAR(100)
- )
+ );
  
 CREATE TABLE PontoTuristico (
    CodPontoTuristico INT AUTO_INCREMENT PRIMARY key,
@@ -80,7 +80,7 @@ CREATE TABLE PontoTuristico (
    HorarioInicio TIME,
    HorarioTermino TIME,
    CodCidade INT
- )
+ );
  
 CREATE TABLE Hoteis (
    CodHoteis INT AUTO_INCREMENT PRIMARY KEY,
@@ -90,7 +90,7 @@ CREATE TABLE Hoteis (
    estrelas INT,
    NumeroQuartos INT,
    CodCidade INT
- )
+ );
  
 CREATE TABLE Restaurantes (
    CodRestaurante INT AUTO_INCREMENT PRIMARY KEY,
@@ -100,7 +100,7 @@ CREATE TABLE Restaurantes (
    estrelas INT,
    TipoComida VARCHAR(50),
    CodCidade INT
- )
+ );
  
 CREATE TABLE Localidades (
    CodLocalidade INT AUTO_INCREMENT PRIMARY KEY,
