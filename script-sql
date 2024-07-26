@@ -223,3 +223,19 @@ WHERE nome = 'Teatro Municipal';
 DELETE FROM Especialidade
 WHERE tipo = 'monumentos históricos';
 
+                            /*JOINS*/
+
+/*INNER JOIN*/
+
+SELECT cidades.CodCidade, PontoTuristico.CodCidade FROM cidades INNER JOIN PontoTuristico 
+ON  cidades.CodCidade = PontoTuristico.CodPontoTuristico
+
+SELECT cidades.CodCidade,Restaurantes.CodCidade FROM cidades INNER JOIN Restaurantes
+ON cidades.CodCidade=Restaurantes.CodCidade
+
+/*RIGHT JOIN*/
+
+
+
+
+
