@@ -1,7 +1,7 @@
-/*CREAÇÃO DA DATABASE*/
+                              /*CRIAÇÃO DA DATABASE*/
 CREATE DATABASE AgTurismo;
 
-/*CRIAÇÃO DE TABELAS */
+                              /*CRIAÇÃO DE TABELAS */
 CREATE TABLE PacViagem (
   CodPacote INT AUTO_INCREMENT PRIMARY key,
   valor MONEY,
@@ -110,7 +110,9 @@ CREATE TABLE Localidades (
    pais VARCHAR(50)
  )
    
-/*INPUT DE DADOS*/
+
+                              *INPUT DE DADOS*/
+
 INSERT INTO PacViagem (valor,duracao) VALUES (1000, 1);
 INSERT INTO PacViagem (valor,duracao) VALUES (2000, 2);
 INSERT INTO PacViagem (valor,duracao) VALUES (3000, 3);
@@ -141,11 +143,11 @@ INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (3, 3);
 INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (4, 4);
 INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (5, 5);
 
-INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("Ana", 22, 1);
-INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("João", 25, 1);
-INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("Bruno", 29, 2);
-INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("Guilherme", 20, 3);
-INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ("Juliana", 30, 2);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ('Ana', 22, 1);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ('João', 25, 1);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ('Bruno', 29, 2);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ('Guilherme', 20, 3);
+INSERT INTO GuiasTuristicos (nome, idade, CodCidade) VALUES ('Juliana', 30, 2);
 
 INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (1,1);
 INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (2,2);
@@ -153,11 +155,11 @@ INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (3,2);
 INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (4,1);
 INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (5,1);
 
-INSERT INTO cidade (cidade, estado, pais, populacao, CodClima ) VALUES ("Passos", "MG", "Brasil", 120000, 1);
-INSERT INTO cidade (cidade, estado, pais, populacao, CodClima ) VALUES ("itau", "MG", "Brasil", 10000, 1);
-INSERT INTO cidade (cidade, estado, pais, populacao, CodClima ) VALUES ("pratapolis", "MG", "Brasil",20000, 1);
-INSERT INTO cidade (cidade, estado, pais, populacao, CodClima ) VALUES ("cassia", "MG", "Brasil", 50000, 1);
-INSERT INTO cidade (cidade, estado, pais, populacao, CodClima ) VALUES ("itamogi", "MG", "Brasil", 60000, 1);
+INSERT INTO cidades (cidade, estado, pais, populacao, CodClima ) VALUES ('Passos', 'MG', 'Brasil', 120000, 1);
+INSERT INTO cidades (cidade, estado, pais, populacao, CodClima ) VALUES ('itau', 'MG', 'Brasil', 10000, 1);
+INSERT INTO cidades (cidade, estado, pais, populacao, CodClima ) VALUES ('pratapolis', 'MG', 'Brasil',20000, 1);
+INSERT INTO cidades (cidade, estado, pais, populacao, CodClima ) VALUES ('cassia', 'MG', 'Brasil', 50000, 1);
+INSERT INTO cidades (cidade, estado, pais, populacao, CodClima ) VALUES ('itamogi', 'MG', 'Brasil', 60000, 1);
 
 INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (1, 1);
 INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (2, 2);
@@ -165,17 +167,17 @@ INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (3, 3);
 INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (4, 4);
 INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (5, 5);
 
-INSERT INTO Especialidade (tipo) VALUES ("cachoeira");
-INSERT INTO Especialidade (tipo) VALUES ("montanha");
-INSERT INTO Especialidade (tipo) VALUES ("culinaria");
-INSERT INTO Especialidade (tipo) VALUES ("parques");
-INSERT INTO Especialidade (tipo) VALUES ("monumentos históricos");
+INSERT INTO Especialidade (tipo) VALUES ('cachoeira');
+INSERT INTO Especialidade (tipo) VALUES ('montanha');
+INSERT INTO Especialidade (tipo) VALUES ('culinaria');
+INSERT INTO Especialidade (tipo) VALUES ('parques');
+INSERT INTO Especialidade (tipo) VALUES ('monumentos históricos');
 
-INSERT INTO Enderecos (cep, logradouro) VALUES ("37900-372", "rua A");
-INSERT INTO Enderecos (cep, logradouro) VALUES ("37900-332", "rua B");
-INSERT INTO Enderecos (cep, logradouro) VALUES ("37900-377", "rua C");
-INSERT INTO Enderecos (cep, logradouro) VALUES ("37900-373", "rua D");
-INSERT INTO Enderecos (cep, logradouro) VALUES ("37900-362", "rua E");
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-372','rua A');
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-332', 'rua B');
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-377', 'rua C');
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-373', 'rua D');
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-362', 'rua E');
 
 INSERT INTO PontoTuristico (nome, cep, logradouro, PrecisaPagamento, HorarioInicio, HorarioTermino, CodCidade) VALUES ('Praça Central', '37900-001', 'Av. Principal', TRUE, '08:00:00', '18:00:00', 1);
 INSERT INTO PontoTuristico (nome, cep, logradouro, PrecisaPagamento, HorarioInicio, HorarioTermino, CodCidade) VALUES ('Museu Histórico', '37900-002', 'Rua do Museu', FALSE, '09:00:00', '17:00:00', 2);
@@ -200,8 +202,10 @@ INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-002', 'Itau',
 INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-003', 'Pratapolis', 'MG', 'Brasil');
 INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-004', 'Cassia', 'MG', 'Brasil');
 INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-005', 'Itamogi', 'MG', 'Brasil');
+                        
 
-/*UPDATE DE DADOS*/
+                        /*UPDATE DE DADOS*/
+
 
 UPDATE PacViagem SET valor = 4500
 WHERE CodPacote = 5;
@@ -212,7 +216,7 @@ WHERE nome = 'Juliana';
 UPDATE Hoteis SET estrelas = 5
 WHERE Nome = 'Pousada da Serra';
 
-/*DELETANDO DADOS*/
+                        /*DELETANDO DADOS*/
 
 DELETE FROM GuiasTuristicos
 WHERE nome = 'João';
@@ -227,13 +231,46 @@ WHERE tipo = 'monumentos históricos';
 
 /*INNER JOIN*/
 
-SELECT cidades.CodCidade, PontoTuristico.CodCidade FROM cidades INNER JOIN PontoTuristico 
-ON  cidades.CodCidade = PontoTuristico.CodPontoTuristico
+/*Foi utilizado o Inner JOin para verificar a correspondencia entre as
+cidades e os pontos turisticos na primeira consulta!
+Na segunda consulta foi utilizado para verificar a correspondência entre as cidades e os restaurantes.*/
 
-SELECT cidades.CodCidade,Restaurantes.CodCidade FROM cidades INNER JOIN Restaurantes
-ON cidades.CodCidade=Restaurantes.CodCidade
+
+SELECT cidade, nome from cidades inner JOin PontoTuristico 
+on  cidades.cidade = PontoTuristico.nome;
+
+SELECT cidade, nome FROM cidades INNER JOIN Restaurantes
+ON cidades.cidade = Restaurantes.nome;
+
+
+
+/*LEFT JOIN*/
+/*Foi utilizado o LEFT JOIN para retornar todas as linhas da tabela à esquerda e as linhas correspondentes da tabela à direita. 
+Se não houver correspondência, as colunas da tabela à direita serão NULL.*/
+
+
+SELECT nome FROM GuiasTuristicos LEFT JOIN GuiaEspecialidades
+ON GuiasTuristicos.nome = GuiaEspecialidades.CodGuia;
+
+
 
 /*RIGHT JOIN*/
+  /*Foi utilizado o RIGHT JOIN para retornar todas as linhas da tabela à direita e as linhas correspondentes da tabela à esquerda. 
+Se não houver correspondência, as colunas da tabela à esquerda serão NULL.*/
+
+
+SELECT nome,cidade FROM Hoteis RIGHT JOIN cidades
+ON Hoteis.nome = cidades.cidade;
+
+
+
+/*CROSS JOIN*/
+ /*Foi utilizado o CROSS JOIN para retornar o produto cartesiano das duas tabelas, combinando cada linha da primeira tabela com todas as linhas da segunda tabela.*/
+
+
+SELECT nome,codrelacao AS PontoTuristico From PacCidades CROSS JOIN PontoTuristico;
+
+
 
 
 
