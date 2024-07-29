@@ -117,11 +117,11 @@ INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (3, 3);
 INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (4, 4);
 INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (5, 5);*/
 
-/*INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (1, 1);
+INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (1, 1);
 INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (2, 2);
 INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (3, 3);
 INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (4, 4);
-INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (5, 5);*/
+INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (5, 5);
 
 /*/INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (1, 1);
 INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (2, 2);
@@ -129,11 +129,11 @@ INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (3, 3);
 INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (4, 4);
 INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (5, 5);*/
 
-/*INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (1, 1);
+INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (1, 1);
 INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (2, 2);
 INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (3, 3);
 INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (4, 4);
-INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (5, 5);*/
+INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (5, 5);
 
 INSERT INTO GuiasTuristicos (nome, idade) VALUES ('Ana', 22);
 INSERT INTO GuiasTuristicos (nome, idade) VALUES ('João', 25);
@@ -141,11 +141,11 @@ INSERT INTO GuiasTuristicos (nome, idade) VALUES ('Bruno', 29);
 INSERT INTO GuiasTuristicos (nome, idade) VALUES ('Guilherme', 20);
 INSERT INTO GuiasTuristicos (nome, idade) VALUES ('Juliana', 30);
 
-/*INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (1,1);
+INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (1,1);
 INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (2,2);
 INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (3,2);
 INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (4,1);
-INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (5,1);*/
+INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (5,1);
 
 INSERT INTO cidades (cidade, estado, pais, populacao) VALUES ('Passos', 'MG', 'Brasil', 120000);
 INSERT INTO cidades (cidade, estado, pais, populacao) VALUES ('itau', 'MG', 'Brasil', 10000 );
@@ -153,11 +153,11 @@ INSERT INTO cidades (cidade, estado, pais, populacao ) VALUES ('pratapolis', 'MG
 INSERT INTO cidades (cidade, estado, pais, populacao) VALUES ('cassia', 'MG', 'Brasil', 50000 );
 INSERT INTO cidades (cidade, estado, pais, populacao) VALUES ('itamogi', 'MG', 'Brasil', 60000);
 
-/*INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (1, 1);
+INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (1, 1);
 INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (2, 2);
 INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (3, 3);
 INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (4, 4);
-INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (5, 5);*/
+INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (5, 5);
 
 INSERT INTO Especialidade (tipo) VALUES ('cachoeira');
 INSERT INTO Especialidade (tipo) VALUES ('montanha');
@@ -211,11 +211,11 @@ WHERE nome = 'Teatro Municipal';
 DELETE FROM Especialidade
 WHERE tipo = 'monumentos históricos';
 
-SELECT cidade, nome from cidades inner JOin PontoTuristico 
-on  cidades.cidade = PontoTuristico.nome;
+SELECT codrelacao,codenderecos From  Enderecos inner JOin PacPontoTuristico
+on Enderecos.CodEnderecos = PacPontoTuristico.CodRelacao
 
-SELECT cidade, nome FROM cidades INNER JOIN Restaurantes
-ON cidades.cidade = Restaurantes.nome;
+SELECT * FROM cidades INNER JOIN Restaurantes
+
 
 SELECT nome FROM GuiasTuristicos LEFT JOIN GuiaEspecialidades
 ON GuiasTuristicos.nome = GuiaEspecialidades.CodGuia;
@@ -224,4 +224,5 @@ SELECT nome,cidade FROM Hoteis RIGHT JOIN cidades
 ON Hoteis.nome = cidades.cidade;
 
 SELECT nome,codrelacao AS PontoTuristico From PacCidades CROSS JOIN PontoTuristico;
-select * from hoteis
+
+select * from PontoTuristico
