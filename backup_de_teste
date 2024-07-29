@@ -1,0 +1,227 @@
+CREATE TABLE PacViagem (
+  CodPacote INTEGER PRIMARY KEY AUTOINCREMENT,
+  valor float ,
+  duracao INT
+);
+
+CREATE TABLE PacGuia (
+  CodRelacao INTEGER PRIMARY KEY AUTOINCREMENT,
+  CodPacote INT,
+  CodGuia INT
+);
+
+CREATE TABLE PacPontoTuristico (
+  CodRelacao INTEGER PRIMARY KEY AUTOINCREMENT,
+  CodPacote INT,
+  CodPontoTuristico INT
+);
+
+CREATE TABLE PacHoteis (
+  CodRelacao INTEGER PRIMARY KEY AUTOINCREMENT,
+  CodPacote INT,
+  CodHoteis INT
+);
+  
+CREATE TABLE PacCidades (
+    CodRelacao INTEGER PRIMARY KEY AUTOINCREMENT,
+    CodPacote INT,
+    CodCidade INT
+ );
+ 
+CREATE TABLE GuiasTuristicos (
+   CodGuia INTEGER PRIMARY KEY AUTOINCREMENT,
+   nome VARCHAR(20),
+   idade INT,
+   CodCidade INT
+ );
+ 
+CREATE TABLE GuiaEspecialidades (
+   CodRelacao INTEGER PRIMARY KEY AUTOINCREMENT,
+   CodGuia INT,
+   CodEspec INT
+ );
+ 
+CREATE TABLE cidades (
+   CodCidade INTEGER PRIMARY KEY AUTOINCREMENT,
+   cidade VARCHAR(50),
+   estado VARCHAR(100),
+   pais VARCHAR(50),
+   populacao INT,
+   CodClima INT
+ );
+ 
+CREATE TABLE GuiasEnderecos (
+   CodRelacao INTEGER PRIMARY KEY AUTOINCREMENT,
+   CodGuia INT,
+   CodEndereco INT
+ );
+ 
+CREATE TABLE Especialidade (
+   CodEspec INTEGER PRIMARY KEY AUTOINCREMENT,
+   tipo VARCHAR(30)
+ );
+ 
+CREATE TABLE Enderecos (
+   CodEnderecos INTEGER PRIMARY KEY AUTOINCREMENT,
+   cep VARCHAR(9),
+   logradouro VARCHAR(100)
+ );
+ 
+CREATE TABLE PontoTuristico (
+   CodPontoTuristico INTEGER PRIMARY KEY AUTOINCREMENT,
+   nome VARCHAR(100),
+   cep VARCHAR(9),
+   logradouro VARCHAR(100),
+   PrecisaPagamento bool,
+   HorarioInicio TIME,
+   HorarioTermino TIME,
+   CodCidade INT
+ );
+ 
+CREATE TABLE Hoteis (
+   CodHoteis INTEGER PRIMARY KEY AUTOINCREMENT,
+   nome VARCHAR(50),
+   Cep VARCHAR(9),
+   logradouro VARCHAR(100),
+   estrelas INT,
+   NumeroQuartos INT,
+   CodCidade INT
+ );
+ 
+CREATE TABLE Restaurantes (
+   CodRestaurante INTEGER PRIMARY KEY AUTOINCREMENT,
+   nome VARCHAR(50),
+   cep VARCHAR(9),
+   logradouro VARCHAR(100),
+   estrelas INT,
+   TipoComida VARCHAR(50),
+   CodCidade INT
+ );
+ 
+CREATE TABLE Localidades (
+   CodLocalidade INTEGER PRIMARY KEY AUTOINCREMENT,
+   cep VARCHAR(9),
+   cidade VARCHAR(50),
+   estado VARCHAR(100),
+   pais VARCHAR(50)
+ );
+   INSERT INTO PacViagem (valor,duracao) VALUES (1000, 1);
+INSERT INTO PacViagem (valor,duracao) VALUES (2000, 2);
+INSERT INTO PacViagem (valor,duracao) VALUES (3000, 3);
+INSERT INTO PacViagem (valor,duracao) VALUES (4000, 4);
+INSERT INTO PacViagem (valor,duracao) VALUES (5000, 5);
+
+/*INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (1, 1);
+INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (2, 2);
+INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (3, 3);
+INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (4, 4);
+INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (5, 5);*/
+
+/*INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (1, 1);
+INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (2, 2);
+INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (3, 3);
+INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (4, 4);
+INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (5, 5);*/
+
+/*/INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (1, 1);
+INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (2, 2);
+INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (3, 3);
+INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (4, 4);
+INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (5, 5);*/
+
+/*INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (1, 1);
+INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (2, 2);
+INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (3, 3);
+INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (4, 4);
+INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (5, 5);*/
+
+INSERT INTO GuiasTuristicos (nome, idade) VALUES ('Ana', 22);
+INSERT INTO GuiasTuristicos (nome, idade) VALUES ('João', 25);
+INSERT INTO GuiasTuristicos (nome, idade) VALUES ('Bruno', 29);
+INSERT INTO GuiasTuristicos (nome, idade) VALUES ('Guilherme', 20);
+INSERT INTO GuiasTuristicos (nome, idade) VALUES ('Juliana', 30);
+
+/*INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (1,1);
+INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (2,2);
+INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (3,2);
+INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (4,1);
+INSERT INTO GuiaEspecialidades (CodGuia, CodEspec) VALUES (5,1);*/
+
+INSERT INTO cidades (cidade, estado, pais, populacao) VALUES ('Passos', 'MG', 'Brasil', 120000);
+INSERT INTO cidades (cidade, estado, pais, populacao) VALUES ('itau', 'MG', 'Brasil', 10000 );
+INSERT INTO cidades (cidade, estado, pais, populacao ) VALUES ('pratapolis', 'MG', 'Brasil',20000 );
+INSERT INTO cidades (cidade, estado, pais, populacao) VALUES ('cassia', 'MG', 'Brasil', 50000 );
+INSERT INTO cidades (cidade, estado, pais, populacao) VALUES ('itamogi', 'MG', 'Brasil', 60000);
+
+/*INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (1, 1);
+INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (2, 2);
+INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (3, 3);
+INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (4, 4);
+INSERT INTO GuiasEnderecos (CodGuia, CodEndereco ) VALUES (5, 5);*/
+
+INSERT INTO Especialidade (tipo) VALUES ('cachoeira');
+INSERT INTO Especialidade (tipo) VALUES ('montanha');
+INSERT INTO Especialidade (tipo) VALUES ('culinaria');
+INSERT INTO Especialidade (tipo) VALUES ('parques');
+INSERT INTO Especialidade (tipo) VALUES ('monumentos históricos');
+
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-372','rua A');
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-332', 'rua B');
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-377', 'rua C');
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-373', 'rua D');
+INSERT INTO Enderecos (cep, logradouro) VALUES ('37900-362', 'rua E');
+
+INSERT INTO PontoTuristico (nome, cep, logradouro, PrecisaPagamento, HorarioInicio, HorarioTermino) VALUES ('Praça Central', '37900-001', 'Av. Principal', TRUE, '08:00:00', '18:00:00');
+INSERT INTO PontoTuristico (nome, cep, logradouro, PrecisaPagamento, HorarioInicio, HorarioTermino) VALUES ('Museu Histórico', '37900-002', 'Rua do Museu', FALSE, '09:00:00', '17:00:00');
+INSERT INTO PontoTuristico (nome, cep, logradouro, PrecisaPagamento, HorarioInicio, HorarioTermino) VALUES ('Parque Nacional', '37900-003', 'Estrada do Parque', TRUE, '07:00:00', '19:00:00');
+INSERT INTO PontoTuristico (nome, cep, logradouro, PrecisaPagamento, HorarioInicio, HorarioTermino) VALUES ('Cachoeira da Fumaça', '37900-004', 'Trilha da Cachoeira', FALSE, '06:00:00', '18:00:00');
+INSERT INTO PontoTuristico (nome, cep, logradouro, PrecisaPagamento, HorarioInicio, HorarioTermino) VALUES ('Teatro Municipal', '37900-005', 'Praça do Teatro', TRUE, '10:00:00', '22:00:00');
+
+INSERT INTO Hoteis (Nome, Cep, logradouro, estrelas, NumeroQuartos) VALUES ('Hotel Central', '37900-001', 'Av. Principal', 4, 50 );
+INSERT INTO Hoteis (Nome, Cep, logradouro, estrelas, NumeroQuartos) VALUES ('Pousada da Serra', '37900-002', 'Rua da Serra', 3, 20);
+INSERT INTO Hoteis (Nome, Cep, logradouro, estrelas, NumeroQuartos) VALUES ('Resort das Águas', '37900-003', 'Estrada do Resort', 5, 100);
+INSERT INTO Hoteis (Nome, Cep, logradouro, estrelas, NumeroQuartos) VALUES ('Hotel Fazenda', '37900-004', 'Trilha da Fazenda', 4, 30);
+INSERT INTO Hoteis (Nome, Cep, logradouro, estrelas, NumeroQuartos) VALUES ('Hostel Jovem', '37900-005', 'Rua do Hostel', 2, 10);
+
+INSERT INTO Restaurantes (nome, cep, logradouro, estrelas, TipoComida) VALUES ('Restaurante Saboroso', '37900-001', 'Av. Principal', 5, 'Brasileira');
+INSERT INTO Restaurantes (nome, cep, logradouro, estrelas, TipoComida) VALUES ('Cantina Italiana', '37900-002', 'Rua da Cantina', 4, 'Italiana' );
+INSERT INTO Restaurantes (nome, cep, logradouro, estrelas, TipoComida) VALUES ('Churrascaria Boi na Brasa', '37900-003', 'Av. do Churrasco', 5, 'Churrasco');
+INSERT INTO Restaurantes (nome, cep, logradouro, estrelas, TipoComida) VALUES ('Sushi Bar', '37900-004', 'Rua do Sushi', 4, 'Japonesa');
+INSERT INTO Restaurantes (nome, cep, logradouro, estrelas, TipoComida) VALUES ('Café Gourmet', '37900-005', 'Praça do Café', 3, 'Cafeteria');
+
+INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-001', 'Passos', 'MG', 'Brasil');
+INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-002', 'Itau', 'MG', 'Brasil');
+INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-003', 'Pratapolis', 'MG', 'Brasil');
+INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-004', 'Cassia', 'MG', 'Brasil');
+INSERT INTO Localidades (cep, cidade, estado, pais) VALUES ('37900-005', 'Itamogi', 'MG', 'Brasil');
+UPDATE PacViagem SET valor = 4500
+WHERE CodPacote = 5;
+
+UPDATE GuiasTuristicos SET idade = 32
+WHERE nome = 'Juliana';
+
+UPDATE Hoteis SET estrelas = 5
+WHERE Nome = 'Pousada da Serra';
+DELETE FROM GuiasTuristicos
+WHERE nome = 'João';
+
+DELETE FROM PontoTuristico
+WHERE nome = 'Teatro Municipal';
+
+DELETE FROM Especialidade
+WHERE tipo = 'monumentos históricos';
+
+SELECT cidade, nome from cidades inner JOin PontoTuristico 
+on  cidades.cidade = PontoTuristico.nome;
+
+SELECT cidade, nome FROM cidades INNER JOIN Restaurantes
+ON cidades.cidade = Restaurantes.nome;
+
+SELECT nome FROM GuiasTuristicos LEFT JOIN GuiaEspecialidades
+ON GuiasTuristicos.nome = GuiaEspecialidades.CodGuia;
+
+SELECT nome,cidade FROM Hoteis RIGHT JOIN cidades
+ON Hoteis.nome = cidades.cidade;
+
+SELECT nome,codrelacao AS PontoTuristico From PacCidades CROSS JOIN PontoTuristico;
+select * from hoteis
