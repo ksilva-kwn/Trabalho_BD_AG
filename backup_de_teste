@@ -1,7 +1,11 @@
+
+
+
 CREATE TABLE PacViagem (
   CodPacote INTEGER PRIMARY KEY AUTOINCREMENT,
   valor float ,
-  duracao INT
+  duracao INT,
+  nome varchar (50)
 );
 
 CREATE TABLE PacGuia (
@@ -111,17 +115,19 @@ CREATE TABLE Localidades (
    Clima VARCHAR(50)
  )
  
-   INSERT INTO PacViagem (valor,duracao) VALUES (1000, 1);
-INSERT INTO PacViagem (valor,duracao) VALUES (2000, 2);
-INSERT INTO PacViagem (valor,duracao) VALUES (3000, 3);
-INSERT INTO PacViagem (valor,duracao) VALUES (4000, 4);
-INSERT INTO PacViagem (valor,duracao) VALUES (5000, 5);
 
-/*INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (1, 1);
+
+INSERT INTO PacViagem (valor,duracao,nome) VALUES (1000, 5,'#FERIAS');
+INSERT INTO PacViagem (valor,duracao,nome) VALUES (2000, 3,'FERIADOU');
+INSERT INTO PacViagem (valor,duracao,nome) VALUES (3000, 2,'FINDI');
+INSERT INTO PacViagem (valor,duracao,nome) VALUES (4000, 4,'LUA DE MEL');
+INSERT INTO PacViagem (valor,duracao,nome) VALUES (5000, 1,'FOLGUINHA');
+
+INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (1, 1);
 INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (2, 2);
 INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (3, 3);
 INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (4, 4);
-INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (5, 5);*/
+INSERT INTO PacGuia (CodPacote, CodGuia) VALUES (5, 5);
 
 INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (1, 1);
 INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (2, 2);
@@ -129,11 +135,11 @@ INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (3, 3);
 INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (4, 4);
 INSERT INTO PacPontoTuristico (CodPacote, CodPontoTuristico) VALUES (5, 5);
 
-/*/INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (1, 1);
+INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (1, 1);
 INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (2, 2);
 INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (3, 3);
 INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (4, 4);
-INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (5, 5);*/
+INSERT INTO PacHoteis (CodPacote, CodHoteis) VALUES (5, 5);
 
 INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (1, 1);
 INSERT INTO PacCidades (CodPacote, CodCidade) VALUES (2, 2);
@@ -207,7 +213,10 @@ INSERT INTO Clima (Clima) VALUES ('Praiano');
 INSERT INTO Clima (Clima) VALUES ('Quente');
 INSERT INTO Clima (Clima) VALUES ('Frio');
 
-UPDATE PacViagem SET valor = 4500
+
+
+
+PDATE PacViagem SET valor = 4500
 WHERE CodPacote = 5;
 
 UPDATE GuiasTuristicos SET idade = 32
@@ -215,6 +224,8 @@ WHERE nome = 'Juliana';
 
 UPDATE Hoteis SET estrelas = 5
 WHERE Nome = 'Pousada da Serra';
+
+
 DELETE FROM GuiasTuristicos
 WHERE nome = 'João';
 
@@ -224,17 +235,24 @@ WHERE nome = 'Teatro Municipal';
 DELETE FROM Especialidade
 WHERE tipo = 'monumentos históricos';
 
+
+
 SELECT codrelacao,codenderecos From  Enderecos inner JOin PacPontoTuristico
 on Enderecos.CodEnderecos = PacPontoTuristico.CodRelacao
 
 SELECT * FROM cidades INNER JOIN Restaurantes
 
+
+
 SELECT nome FROM GuiasTuristicos LEFT JOIN GuiaEspecialidades
 ON GuiasTuristicos.nome = GuiaEspecialidades.CodGuia;
+
+
 
 SELECT nome,cidade FROM Hoteis RIGHT JOIN cidades
 ON Hoteis.nome = cidades.cidade;
 
+
+
 SELECT nome,codrelacao AS PontoTuristico From PacCidades CROSS JOIN PontoTuristico;
 
-select * from PacPontoTuristico
