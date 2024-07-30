@@ -1,4 +1,7 @@
+                              /*CRIAÇÃO DA DATABASE*/
+CREATE DATABASE AgTurismo;
 
+                              /*CRIAÇÃO DE TABELAS */
 
 
 CREATE TABLE PacViagem (
@@ -115,7 +118,7 @@ CREATE TABLE Localidades (
    Clima VARCHAR(50)
  )
  
-
+                               /*INPUT DE DADOS*/
 
 INSERT INTO PacViagem (valor,duracao,nome) VALUES (1000, 5,'#FERIAS');
 INSERT INTO PacViagem (valor,duracao,nome) VALUES (2000, 3,'FERIADOU');
@@ -213,10 +216,10 @@ INSERT INTO Clima (Clima) VALUES ('Praiano');
 INSERT INTO Clima (Clima) VALUES ('Quente');
 INSERT INTO Clima (Clima) VALUES ('Frio');
 
+                                           /*UPDATE DE DADOS*/
 
 
-
-PDATE PacViagem SET valor = 4500
+UPDATE PacViagem SET valor = 4500
 WHERE CodPacote = 5;
 
 UPDATE GuiasTuristicos SET idade = 32
@@ -224,7 +227,11 @@ WHERE nome = 'Juliana';
 
 UPDATE Hoteis SET estrelas = 5
 WHERE Nome = 'Pousada da Serra';
+DELETE FROM GuiasTuristicos
+WHERE nome = 'João';
 
+
+                                          /*DELETANDO DADOS*/
 
 DELETE FROM GuiasTuristicos
 WHERE nome = 'João';
@@ -235,6 +242,10 @@ WHERE nome = 'Teatro Municipal';
 DELETE FROM Especialidade
 WHERE tipo = 'monumentos históricos';
 
+                                            /*JOINS*/
+
+                            
+                                          /*INNER JOIN*/
 
 
 SELECT codrelacao,codenderecos From  Enderecos inner JOin PacPontoTuristico
@@ -243,16 +254,24 @@ on Enderecos.CodEnderecos = PacPontoTuristico.CodRelacao
 SELECT * FROM cidades INNER JOIN Restaurantes
 
 
+                                          /*LEFT JOIN*/
+/*Foi utilizado o LEFT JOIN para retornar todas as linhas da tabela à esquerda e as linhas correspondentes da tabela à direita. 
+Se não houver correspondência, as colunas da tabela à direita serão NULL.*/
 
 SELECT nome FROM GuiasTuristicos LEFT JOIN GuiaEspecialidades
 ON GuiasTuristicos.nome = GuiaEspecialidades.CodGuia;
 
 
+                                          /*RIGHT JOIN*/
+  /*Foi utilizado o RIGHT JOIN para retornar todas as linhas da tabela à direita e as linhas correspondentes da tabela à esquerda. 
+Se não houver correspondência, as colunas da tabela à esquerda serão NULL.*/
 
 SELECT nome,cidade FROM Hoteis RIGHT JOIN cidades
 ON Hoteis.nome = cidades.cidade;
 
-
+                                          /*CROSS JOIN*/
+ /*Foi utilizado o CROSS JOIN para retornar o produto cartesiano das duas tabelas, combinando cada linha da primeira tabela com todas as linhas da segunda tabela.*/
+  
 
 SELECT nome,codrelacao AS PontoTuristico From PacCidades CROSS JOIN PontoTuristico;
 
